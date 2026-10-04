@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mary's Responsive Design</title>
+
+  <style>
+
+
+/*Inline CSS from original assignment*/
+
+  /* =========================
+     MOBILE FIRST STYLES
+     These styles apply to small screens first.
+     Larger screens are adjusted later with media queries.
+     ========================= */
+
+  /*As the size changes so does the background color*/
+  /*changed original background color to  peach color and text color to white.
+  The text is changed throughout page to white*/
+  /*ChatGPT help with code for changing text color*/
+
+  /* Reset default margin and set base font + background */
+  body {
+    margin: 0;                                  /* Removes browser default spacing */
+    font-family: Arial, Helvetica, sans-serif;  /* Clean sans-serif stack */
+    background:#e0b8b8;                         /* Light gray base background has been changed to peach*/
+    color: white;
+  }
+
+
+  /*Container keeps the page responsive as it changes to different device sizes*/
+  /* Main page container */
+/*this is for smallest device which is responsive and colors will change more for each larger screen size*/
+  .container {
+    max-width: 1100px;     /* Stops content stretching too wide on big screens */
+    margin: 40px auto;     /* 40px top/bottom, auto left/right = centered */
+    padding: 20px;         /* Space inside the container */
+    text-align: center;    /* Centers text content */
+  }
+
+  /* Flexbox wrapper for the layout */
+  .wrapper {
+    display: flex;            /* Flex container */
+    flex-direction: column;   /* MOBILE FIRST: stack items vertically */
+    gap: 20px;                /* Even spacing between items */
+  }
+
+  /* Individual content sections (cards) */
+  /*Changed color for card background from original white to light blue*/
+  .section {
+    background: #91c1d4;         /* White card background has been changed to light blue*/
+    padding: 20px;            /* Inner spacing for readability */
+    border-radius: 12px;      /* Soft rounded corners */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Subtle depth */
+  }
+
+
+  /*Tablet size responsive background color change to purple*/
+  /* =========================
+     TABLET (600px and up)
+     ========================= */
+  @media (min-width: 600px) {
+    body { background: #683695; }   /* Confirms the tablet breakpoint is active */
+
+    .wrapper {
+      flex-direction: row;     /* Switch from vertical stack to a row */
+      flex-wrap: wrap;         /* Let items wrap to the next row */
+      justify-content: center; /* Center items horizontally */
+    }
+
+    .section { width: 45%; }   /* ~2 columns (45% leaves room for the gap) */
+  }
+
+  /* =========================
+     DESKTOP (900px and up)
+     ========================= */
+    /*changed background color to gold to show desktop at least 900px*/
+  @media (min-width: 900px) {
+    body { background: #929053; }   /* Confirms the desktop breakpoint is active */
+
+    .section { width: 30%; }        /* ~3 columns across */
+  }
+
+  /* =========================
+     LARGE DESKTOP (1200px and up)
+     ========================= */
+
+  /*Change color to blue* for large desktop over 1200px*/
+  @media (min-width: 1200px) {
+    body { background: #105ed2; }   /* Confirms the large-desktop breakpoint is active */
+
+    /* ~4 columns. 22% (not 25%) leaves room for the gap,
+       padding, and rounding so the row never overflows. */
+    .section { width: 22%; }
+  }
+  </style>
+</head>
+
+<body>
+
+  <!--Container section of four cards.
+  Card text contains famous quotes by famous artist source is website called Lori McNee Fine Art & Tips website's article 
+  titled: "Favorite Inspiring Art Quotes Throughout the Ages"-->
+  <div class="container">
+    <h1>Quotes about nature, creativity</h1>
+    <p>Find inspiration from the words of great artists and how nature has inspired their creativity.</p>
+
+    <div class="wrapper">
+
+      <div class="section">
+        <h2>How Nature Inspires</h2>
+        <p>“I would like to paint the way a bird sings.” ~Claude Monet</p>
+      </div>
+
+      <div class="section">
+        <h2>From dream to inspiration</h2>
+        <p>“I dream my paintings, and then they paint my dream.” ~Vincent Van Gogh.</p>
+      </div>
+
+      <div class="section">
+        <h2>Art is part of an artist's life story</h2>
+        <p>Painting is just another way of keeping a diary.” ~Pablo Picasso</p>
+      </div>
+
+      <div class="section">
+        <h2>Art lives beyond the natural world</h2>
+        <p>Great art picks up where nature ends. ~Marc Chagall.</p>
+      </div>
+
+    </div><!-- /.wrapper -->
+  </div><!-- /.container -->
+</body>
+</html>
